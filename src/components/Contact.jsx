@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Linkedin, Copy } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Contact() {
   const [copied, setCopied] = useState(false)
@@ -16,20 +17,20 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
+    <section id="contact" className="relative mx-auto mt-24 max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
       <div className="relative overflow-hidden rounded-3xl border border-white/30 bg-gradient-to-br from-slate-900 via-indigo-900 to-blue-900 p-10 shadow-lg">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(56,189,248,0.25),transparent_45%),radial-gradient(ellipse_at_bottom_left,rgba(244,114,182,0.25),transparent_35%)]" />
 
         <div className="relative">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Let’s collaborate
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Let’s collaborate</h2>
           <p className="mt-3 max-w-2xl text-slate-200">
             Open to opportunities and collaborations across product design, frontend engineering, and interactive experiences.
           </p>
 
           <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
-            <a
+            <motion.a
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
               href={profileUrl}
               target="_blank"
               rel="noreferrer"
@@ -37,14 +38,16 @@ export default function Contact() {
             >
               <Linkedin className="h-4 w-4" />
               Connect on LinkedIn
-            </a>
-            <button
+            </motion.a>
+            <motion.button
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
               onClick={onCopy}
               className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
             >
               <Copy className="h-4 w-4" />
               {copied ? 'Copied!' : 'Copy profile link'}
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>

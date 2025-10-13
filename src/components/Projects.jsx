@@ -1,4 +1,5 @@
 import { ExternalLink } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const projects = [
   {
@@ -45,12 +46,18 @@ export default function Projects() {
       </div>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p) => (
-          <article
+        {projects.map((p, idx) => (
+          <motion.article
+            initial={{ y: 18, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ delay: idx * 0.05, duration: 0.45 }}
             key={p.title}
-            className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow transition hover:shadow-lg"
+            className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow transition will-change-transform hover:shadow-lg"
+            whileHover={{ y: -6, scale: 1.01 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-100/40 via-transparent to-fuchsia-100/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
+            {/* Hover aura */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-cyan-100/40 via-transparent to-fuchsia-100/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <h3 className="text-lg font-semibold text-gray-900">{p.title}</h3>
             <p className="mt-2 text-sm text-gray-600">{p.description}</p>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -69,7 +76,9 @@ export default function Projects() {
                 <ExternalLink className="h-4 w-4" />
               </a>
             </div>
-          </article>
+            {/* Animated border shimmer */}
+            <div className="pointer-events-none absolute -inset-[1px] rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[conic-gradient(at_120%_-10%,#22d3ee,transparent_30%),conic-gradient(at_-20%_110%,#818cf8,transparent_30%)]" />
+          </motion.article>
         ))}
       </div>
     </section>

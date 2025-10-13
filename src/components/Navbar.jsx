@@ -11,12 +11,13 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b border-white/20">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <a href="#home" className="flex items-center gap-2">
-            <span className="inline-block h-3 w-3 rounded-full bg-gradient-to-tr from-cyan-400 via-blue-500 to-fuchsia-500 shadow-[0_0_20px_rgba(99,102,241,0.8)]" />
-            <span className="font-extrabold tracking-tight text-gray-900">Deekshitha</span>
+          <a href="#home" className="group relative flex items-center gap-2">
+            <span className="inline-block h-3 w-3 rounded-full bg-gradient-to-tr from-cyan-400 via-blue-500 to-fuchsia-500 shadow-[0_0_18px_rgba(59,130,246,0.8)]" />
+            <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent font-extrabold tracking-tight">Deekshitha</span>
+            <span className="pointer-events-none absolute -bottom-1 left-5 h-px w-0 bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-300 group-hover:w-20" />
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -24,9 +25,10 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="relative text-sm font-medium text-gray-700 transition-colors hover:text-gray-900"
               >
                 {link.label}
+                <span className="pointer-events-none absolute -bottom-1 left-0 h-px w-0 bg-gray-900 transition-all duration-300 group-hover/lnk:w-full" />
               </a>
             ))}
             <a
