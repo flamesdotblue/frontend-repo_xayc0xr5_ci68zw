@@ -98,7 +98,7 @@ export default function Hero() {
             <motion.a
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
-              href="mailto:hello@hire-me.dev?subject=Let%E2%80%99s%20work%20together&body=Hi%20there%2C%20I%E2%80%99d%20love%20to%20chat%20about..."
+              href="mailto:ui22ec78@iiitsurat.ac.in?subject=Let%E2%80%99s%20work%20together&body=Hi%20there%2C%20I%E2%80%99d%20love%20to%20chat%20about..."
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-black"
             >
               <Mail className="h-4 w-4" />

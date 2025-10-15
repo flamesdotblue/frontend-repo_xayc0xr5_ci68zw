@@ -5,7 +5,8 @@ import { motion } from 'framer-motion'
 export default function Contact() {
   const [copied, setCopied] = useState(false)
   const profileUrl = 'https://in.linkedin.com/in/timmareddy-deekshitha-701218318'
-  const email = 'hello@hire-me.dev'
+  const email = 'ui22ec78@iiitsurat.ac.in'
+  const phone = '+91-9347450699'
 
   const onCopy = async () => {
     try {
@@ -41,7 +42,7 @@ export default function Contact() {
             <motion.a
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
-              href={`tel:+1234567890`}
+              href={`tel:${phone.replace(/[^+\d]/g, '')}`}
               className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
             >
               <Phone className="h-4 w-4" />

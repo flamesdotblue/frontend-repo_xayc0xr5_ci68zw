@@ -32,7 +32,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="mailto:hello@hire-me.dev?subject=Hiring%20Inquiry"
+              href="mailto:ui22ec78@iiitsurat.ac.in?subject=Hiring%20Inquiry"
               className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50"
             >
               <Mail className="h-4 w-4" />
@@ -74,7 +74,7 @@ export default function Navbar() {
             ))}
             <div className="flex gap-2 pt-2">
               <a
-                href="mailto:hello@hire-me.dev?subject=Hiring%20Inquiry"
+                href="mailto:ui22ec78@iiitsurat.ac.in?subject=Hiring%20Inquiry"
                 className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50"
               >
                 <Mail className="h-4 w-4" />
