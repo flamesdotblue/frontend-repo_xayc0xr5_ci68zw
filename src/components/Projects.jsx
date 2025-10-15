@@ -77,11 +77,8 @@ export default function Projects() {
     <section id="projects" className="relative mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Projects from GitHub
+          Projects
         </h2>
-        <p className="mt-3 text-gray-600">
-          Automatically listing only what exists on your GitHub profile. No extras added.
-        </p>
       </div>
 
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
