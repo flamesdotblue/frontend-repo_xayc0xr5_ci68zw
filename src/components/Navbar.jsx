@@ -4,9 +4,11 @@ import { Menu, X, Linkedin, Mail } from 'lucide-react'
 const NAV_LINKS = [
   { href: '#home', label: 'Home' },
   { href: '#projects', label: 'Projects' },
-  { href: '#resume', label: 'Resume' },
   { href: '#skills', label: 'Skills' },
+  { href: '#education', label: 'Education' },
   { href: '#experience', label: 'Experience' },
+  { href: '#achievements', label: 'Achievements' },
+  { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
 ]
 

@@ -1,4 +1,4 @@
-import { Mail, Phone, Linkedin, Github, Download, Award, Briefcase, GraduationCap, BookOpen, Cpu, Brain, Code, ExternalLink } from 'lucide-react'
+import { Mail, Phone, Linkedin, Github, Award, Briefcase, GraduationCap, BookOpen, Cpu, Brain, Code, Star } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const email = 'ui22ec78@iiitsurat.ac.in'
@@ -23,59 +23,50 @@ function Section({ id, title, icon: Icon, children }) {
 export default function Profile() {
   return (
     <div className="relative z-10">
-      {/* Resume / Snapshot */}
-      <Section id="resume" title="Resume" icon={Download}>
-        <div className="overflow-hidden rounded-3xl border border-gray-200 bg-white/80 p-6 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/70">
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="md:col-span-2">
-              <h3 className="text-xl font-semibold text-gray-900">Timmareddy Deekshitha</h3>
-              <p className="mt-1 text-sm font-medium text-blue-700">Student • MERN Stack Developer • Competitive Programmer</p>
-              <ul className="mt-4 grid gap-2 text-sm text-gray-700 sm:grid-cols-2">
-                <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-gray-500" /> {email}</li>
-                <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-gray-500" /> {phone}</li>
-                <li className="flex items-center gap-2"><Linkedin className="h-4 w-4 text-gray-500" /> <a href={linkedin} target="_blank" rel="noreferrer" className="text-blue-700 hover:underline">LinkedIn</a></li>
-                <li className="flex items-center gap-2"><Github className="h-4 w-4 text-gray-500" /> <a href={github} target="_blank" rel="noreferrer" className="text-gray-900 hover:underline">GitHub</a></li>
-              </ul>
-            </div>
-            <div className="flex items-start justify-start gap-3 md:justify-end">
-              <a
-                href={`mailto:${email}?subject=Resume%20Request&body=Hi%2C%20please%20share%20your%20latest%20resume.`}
-                className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-black"
-              >
-                <Download className="h-4 w-4" /> Request PDF
-              </a>
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 hover:bg-gray-50"
-              >
-                <ExternalLink className="h-4 w-4" /> View Projects
-              </a>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Skills */}
+      {/* Skills (Coursework + Technical) */}
       <Section id="skills" title="Skills" icon={Code}>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <SkillCard title="Programming Languages" icon={Code} items={[
-            'C', 'C++', 'Python', 'JavaScript',
-          ]} />
-          <SkillCard title="Frontend" icon={BookOpen} items={[
-            'HTML5', 'CSS3', 'React', 'Redux', 'Vite', 'Tailwind CSS',
-          ]} />
-          <SkillCard title="Backend" icon={Cpu} items={[
-            'Node.js', 'Express.js', 'REST APIs', 'JWT Auth',
-          ]} />
-          <SkillCard title="Databases" icon={Brain} items={[
-            'MongoDB', 'MySQL', 'PostgreSQL',
-          ]} />
-          <SkillCard title="Tools & Platforms" icon={Award} items={[
-            'Git', 'GitHub', 'Linux', 'Docker', 'Postman', 'VS Code',
-          ]} />
-          <SkillCard title="CS & CP" icon={BookOpen} items={[
-            'Data Structures', 'Algorithms', 'OOP', 'DBMS', 'OS', 'LeetCode', 'Codeforces',
-          ]} />
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Coursework / Skills with ratings */}
+          <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="mb-4 flex items-center gap-2">
+              <BookOpen className="h-5 w-5 text-gray-700" />
+              <h3 className="text-lg font-semibold text-gray-900">Coursework / Skills</h3>
+            </div>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {[
+                { name: 'Data Structures & Algorithms', rating: 4 },
+                { name: 'Operating Systems', rating: 4 },
+                { name: 'Embedded Systems', rating: 4 },
+                { name: 'Artificial Intelligence (AI)', rating: 3 },
+                { name: 'OOPs Concepts', rating: 2 },
+                { name: 'Web Development', rating: 4 },
+                { name: 'Android Development', rating: 3 },
+                { name: 'IoT', rating: 4 },
+                { name: 'Image Processing', rating: 3 },
+                { name: 'UI/UX', rating: 2 },
+                { name: 'Machine Learning (ML)', rating: 2 },
+              ].map((item) => (
+                <li key={item.name} className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-3 py-2">
+                  <span className="text-sm font-medium text-gray-800">{item.name}</span>
+                  <Stars rating={item.rating} />
+                </li>
+              ))}
+            </ul>
+            <div className="pointer-events-none absolute inset-0 opacity-60 [mask-image:linear-gradient(white,transparent)] bg-[conic-gradient(at_120%_-10%,#22d3ee,transparent_30%),conic-gradient(at_-20%_110%,#818cf8,transparent_30%)]" />
+          </div>
+
+          {/* Technical Skills chips */}
+          <div className="space-y-6">
+            <SkillCard title="Languages" icon={Code} items={[
+              'Java', 'Python', 'C', 'C++', 'JavaScript', 'SQL',
+            ]} />
+            <SkillCard title="Developer Tools" icon={Cpu} items={[
+              'VS Code', 'Android Studio', 'IntelliJ IDEA Ultimate',
+            ]} />
+            <SkillCard title="Technologies / Frameworks" icon={Brain} items={[
+              'Linux', 'Git', 'GitHub', 'ReactJS', 'Mongo', 'Node.js', 'Express.js', 'Redux', 'Vite', 'Tailwind CSS', 'REST APIs', 'JWT Auth', 'Postman',
+            ]} />
+          </div>
         </div>
       </Section>
 
@@ -83,72 +74,67 @@ export default function Profile() {
       <Section id="education" title="Education" icon={GraduationCap}>
         <div className="grid gap-6 md:grid-cols-2">
           <EduCard
-            school="Indian Institute of Information Technology (IIIT) Surat"
-            degree="B.Tech — Candidate"
-            period="2022 – 2026"
-            details={[
-              'Core focus across Computer Science with strong MERN & CP track',
-              'Active in projects and hackathons; hands‑on, practical approach',
-            ]}
+            school="INDIAN INSTITUTE OF INFORMATION TECHNOLOGY (IIIT), SURAT"
+            degree="Electronics and Communication Engineering — CGPA 8.86"
+            period="11/2022 – 07/2026"
+            location="Surat, Gujarat"
+            details={[]}
           />
         </div>
       </Section>
 
       {/* Experience */}
-      <Section id="experience" title="Experience / Internships" icon={Briefcase}>
+      <Section id="experience" title="Experience" icon={Briefcase}>
         <div className="grid gap-6 md:grid-cols-2">
           <ExpCard
-            company="Open to Internships"
-            role="SWE / Frontend / MERN Intern"
-            period="Available now"
+            company="Blue Stock Fintech Company"
+            role="SDE Intern | Python, Django, Postman, HTML, CSS, JavaScript"
+            period="08/2024"
             points={[
-              'Build responsive, accessible UIs with React and Tailwind',
-              'Develop REST APIs and integrate backend services',
-              'Collaborate in Git workflows; write clean, documented code',
-              'Ship fast with a focus on UX and performance',
-            ]}
-          />
-          <ExpCard
-            company="Academic & GitHub Projects"
-            role="Project Developer"
-            period="Ongoing"
-            points={[
-              'End‑to‑end project ownership from idea to deployment',
-              'Applied MERN stack to real problems and demos',
-              'Automated testing and CI basics; iterative improvements',
-              'See “Projects” section for live examples',
+              'Part of a 5‑member team delivering core product features.',
+              'Built displays for company logo, name, price band, opening/closing dates, issue size, issue type, listing date, status, IPO price, listing price, listing gain, CMP, and current return.',
+              'Enabled downloadable RHP and DRHP PDFs.',
+              'Developed IPO web application and supporting APIs.',
+              'Worked end‑to‑end as a full‑stack developer.',
             ]}
           />
         </div>
       </Section>
 
-      {/* Achievements / Certifications */}
-      <Section id="achievements" title="Achievements / Certifications" icon={Award}>
+      {/* Achievements */}
+      <Section id="achievements" title="Achievements" icon={Award}>
         <div className="grid gap-6 md:grid-cols-2">
           <AchCard
-            title="Competitive Programming"
+            title="Key Highlights"
             items={[
-              'Active on LeetCode and Codeforces',
-              'Strong focus on Data Structures & Algorithms',
-            ]}
-          />
-          <AchCard
-            title="Certifications & Courses"
-            items={[
-              'Coursework in Web Development and CS Fundamentals',
-              'Continuous learning via projects and reading',
+              'FFE Scholar',
             ]}
           />
         </div>
       </Section>
 
-      {/* About Me */}
-      <Section id="about" title="About Me" icon={BookOpen}>
+      {/* Extracurricular */}
+      <Section id="about" title="About / Extracurricular" icon={BookOpen}>
         <div className="overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
-          <p className="text-gray-700">
-            I enjoy building thoughtful, interactive experiences with a strong emphasis on clean UI,
-            performance, and clarity. Current interests include developer tooling and modern web apps.
-          </p>
+          <ul className="grid gap-2 sm:grid-cols-2 text-gray-700 text-sm">
+            <li>• Dancing</li>
+            <li>• Reading books</li>
+            <li>• Playing games</li>
+            <li>• FFE Scholar</li>
+          </ul>
+        </div>
+      </Section>
+
+      {/* Certifications */}
+      <Section id="certifications" title="Certifications" icon={Award}>
+        <div className="overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
+          <ul className="list-disc space-y-2 pl-5 text-sm text-gray-700">
+            <li>IBM SkillsBuild — AI and ML</li>
+            <li>Coursera — Data Structures and Algorithms (DSA)</li>
+            <li>Edu-versity — AI and ML</li>
+            <li>Graphs Camp by Codeforces Master (selected from 40,000+ applicants; learned 17+ advanced graph problem‑solving techniques)</li>
+            <li>Completed the Mentorship Program (through FFE)</li>
+          </ul>
         </div>
       </Section>
 
@@ -159,10 +145,6 @@ export default function Profile() {
           <div className="relative grid items-start gap-6 md:grid-cols-2">
             <div>
               <h3 className="text-2xl font-semibold text-white">Let’s connect</h3>
-              <p className="mt-2 max-w-prose text-slate-200">
-                The fastest way to reach me is email. I’m happy to share my resume, discuss projects,
-                or explore opportunities.
-              </p>
               <div className="mt-6 grid gap-2 text-sm text-slate-100">
                 <a href={`mailto:${email}`} className="inline-flex items-center gap-2 hover:underline">
                   <Mail className="h-4 w-4" /> {email}
@@ -213,6 +195,19 @@ export default function Profile() {
   )
 }
 
+function Stars({ rating }) {
+  return (
+    <div className="inline-flex items-center gap-0.5">
+      {Array.from({ length: 4 }).map((_, i) => (
+        <Star
+          key={i}
+          className={`h-4 w-4 ${i < rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
+        />
+      ))}
+    </div>
+  )
+}
+
 function SkillCard({ title, icon: Icon, items }) {
   return (
     <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
@@ -232,7 +227,7 @@ function SkillCard({ title, icon: Icon, items }) {
   )
 }
 
-function EduCard({ school, degree, period, details }) {
+function EduCard({ school, degree, period, location, details }) {
   return (
     <div className="relative h-full overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -242,11 +237,14 @@ function EduCard({ school, degree, period, details }) {
         </div>
         <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-200">{period}</span>
       </div>
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-gray-700">
-        {details.map((d, i) => (
-          <li key={i}>{d}</li>
-        ))}
-      </ul>
+      <div className="mt-3 text-sm text-gray-700">{location}</div>
+      {Array.isArray(details) && details.length > 0 && (
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-gray-700">
+          {details.map((d, i) => (
+            <li key={i}>{d}</li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
