@@ -34,7 +34,7 @@ export default function Hero() {
         className="relative h-[70vh] w-full overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-slate-50 via-white to-slate-100 shadow-lg"
       >
         <Spline
-          scene="https://prod.spline.design/qQUip0dJPqrrPryE/scene.splinecode"
+          scene="https://prod.spline.design/vZX5NNlylxke-6DM/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
 
