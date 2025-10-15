@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import Spline from '@splinetool/react-spline'
-import { ArrowRight, Mail, Download, User } from 'lucide-react'
+import { ArrowRight, Mail, User } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function Hero() {
@@ -86,7 +86,7 @@ export default function Hero() {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="mt-1 text-sm font-medium text-blue-700 sm:text-base"
               >
-                AI & Web Developer | Innovator | Problem Solver
+                Student • MERN Stack Developer • Competitive Programmer
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
@@ -94,9 +94,8 @@ export default function Hero() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base"
               >
-                I design and build interactive experiences across web, AI/ML, and IoT —
-                translating ideas into polished products with performance, accessibility,
-                and recruiter‑friendly storytelling.
+                I design and build interactive, performant experiences — with a strong focus on clear structure,
+                accessible UI, and recruiter‑friendly presentation.
               </motion.p>
             </div>
           </div>
@@ -105,20 +104,11 @@ export default function Hero() {
             <motion.a
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
-              href="#resume"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-black"
-            >
-              <Download className="h-4 w-4" />
-              View Resume
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </motion.a>
-            <motion.a
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.98 }}
               href="#projects"
               className="group inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50"
             >
               Projects
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </motion.a>
             <motion.a
               whileHover={{ y: -2 }}
@@ -136,7 +126,7 @@ export default function Hero() {
         <div className="mt-5 grid grid-cols-2 gap-3 text-xs text-gray-600 sm:grid-cols-4">
           <Badge label="3D & Motion" value="Spline + Framer" />
           <Badge label="Performance" value="Lighthouse 90+" />
-          <Badge label="Focus" value="AI / Web / IoT" />
+          <Badge label="Focus" value="Student / MERN / CP" />
           <Badge label="Availability" value="Immediate" />
         </div>
       </motion.div>

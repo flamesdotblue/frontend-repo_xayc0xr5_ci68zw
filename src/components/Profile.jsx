@@ -29,7 +29,7 @@ export default function Profile() {
           <div className="grid gap-8 md:grid-cols-3">
             <div className="md:col-span-2">
               <h3 className="text-xl font-semibold text-gray-900">Timmareddy Deekshitha</h3>
-              <p className="mt-1 text-sm text-gray-600">AI & Web Developer | Innovator | Problem Solver</p>
+              <p className="mt-1 text-sm font-medium text-blue-700">Student • MERN Stack Developer • Competitive Programmer</p>
               <ul className="mt-4 grid gap-2 text-sm text-gray-700 sm:grid-cols-2">
                 <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-gray-500" /> {email}</li>
                 <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-gray-500" /> {phone}</li>
@@ -59,19 +59,22 @@ export default function Profile() {
       <Section id="skills" title="Skills" icon={Code}>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <SkillCard title="Programming Languages" icon={Code} items={[
-            'Python', 'C++', 'Java',
+            'C', 'C++', 'Python', 'JavaScript',
           ]} />
-          <SkillCard title="Web Development" icon={BookOpen} items={[
-            'HTML', 'CSS', 'JavaScript', 'React', 'Node.js',
+          <SkillCard title="Frontend" icon={BookOpen} items={[
+            'HTML5', 'CSS3', 'React', 'Redux', 'Vite', 'Tailwind CSS',
           ]} />
-          <SkillCard title="AI / ML Tools" icon={Brain} items={[
-            'TensorFlow', 'scikit-learn', 'OpenCV',
+          <SkillCard title="Backend" icon={Cpu} items={[
+            'Node.js', 'Express.js', 'REST APIs', 'JWT Auth',
           ]} />
-          <SkillCard title="IoT / Embedded" icon={Cpu} items={[
-            'Arduino', 'Raspberry Pi', 'Sensors',
+          <SkillCard title="Databases" icon={Brain} items={[
+            'MongoDB', 'MySQL', 'PostgreSQL',
           ]} />
-          <SkillCard title="Others" icon={Award} items={[
-            'Git', 'Linux', 'Firebase',
+          <SkillCard title="Tools & Platforms" icon={Award} items={[
+            'Git', 'GitHub', 'Linux', 'Docker', 'Postman', 'VS Code',
+          ]} />
+          <SkillCard title="CS & CP" icon={BookOpen} items={[
+            'Data Structures', 'Algorithms', 'OOP', 'DBMS', 'OS', 'LeetCode', 'Codeforces',
           ]} />
         </div>
       </Section>
@@ -84,7 +87,7 @@ export default function Profile() {
             degree="B.Tech — Candidate"
             period="2022 – 2026"
             details={[
-              'Core focus across Computer Science, AI/ML, and Systems',
+              'Core focus across Computer Science with strong MERN & CP track',
               'Active in projects and hackathons; hands‑on, practical approach',
             ]}
           />
@@ -96,13 +99,13 @@ export default function Profile() {
         <div className="grid gap-6 md:grid-cols-2">
           <ExpCard
             company="Open to Internships"
-            role="SWE / ML / Frontend Intern"
+            role="SWE / Frontend / MERN Intern"
             period="Available now"
             points={[
               'Build responsive, accessible UIs with React and Tailwind',
-              'Prototype ML features; integrate models and data pipelines',
+              'Develop REST APIs and integrate backend services',
               'Collaborate in Git workflows; write clean, documented code',
-              'Ship fast with a focus on user experience and performance',
+              'Ship fast with a focus on UX and performance',
             ]}
           />
           <ExpCard
@@ -111,7 +114,7 @@ export default function Profile() {
             period="Ongoing"
             points={[
               'End‑to‑end project ownership from idea to deployment',
-              'Applied AI/IoT/Web stacks based on problem requirements',
+              'Applied MERN stack to real problems and demos',
               'Automated testing and CI basics; iterative improvements',
               'See “Projects” section for live examples',
             ]}
@@ -123,17 +126,17 @@ export default function Profile() {
       <Section id="achievements" title="Achievements / Certifications" icon={Award}>
         <div className="grid gap-6 md:grid-cols-2">
           <AchCard
-            title="Hackathons & Competitions"
+            title="Competitive Programming"
             items={[
-              'Participated in college and community hackathons',
-              'Focused themes: AI for Social Good, IoT & Automation',
+              'Active on LeetCode and Codeforces',
+              'Strong focus on Data Structures & Algorithms',
             ]}
           />
           <AchCard
-            title="Certifications"
+            title="Certifications & Courses"
             items={[
-              'Coursera / NPTEL coursework in ML, CV, and Data Science',
-              'Ongoing learning with hands‑on projects and reading',
+              'Coursework in Web Development and CS Fundamentals',
+              'Continuous learning via projects and reading',
             ]}
           />
         </div>
@@ -143,9 +146,8 @@ export default function Profile() {
       <Section id="about" title="About Me" icon={BookOpen}>
         <div className="overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
           <p className="text-gray-700">
-            I enjoy building thoughtful, interactive experiences that blend AI, web, and hardware.
-            I care about craft, clarity, and measurable outcomes. Current interests include
-            AI for social good, developer tooling, and IoT in agriculture.
+            I enjoy building thoughtful, interactive experiences with a strong emphasis on clean UI,
+            performance, and clarity. Current interests include developer tooling and modern web apps.
           </p>
         </div>
       </Section>
