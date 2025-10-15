@@ -91,11 +91,18 @@ export default function Hero() {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base"
+                transition={{ delay: 0.25, duration: 0.5 }}
+                className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-700 sm:text-base"
               >
-                I design and build interactive, performant experiences — with a strong focus on clear structure,
-                accessible UI, and recruiter‑friendly presentation.
+                As a final year student at IIIT Surat majoring in Electronics and Communication Engineering, the practical applications of my academic pursuits have come to life through internships. I am passionate about solving complex problems and creating innovative solutions.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.5 }}
+                className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base"
+              >
+                I am skilled at Python, C++, Java and JavaScript through various projects.
               </motion.p>
             </div>
           </div>
