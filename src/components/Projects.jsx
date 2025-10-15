@@ -3,25 +3,25 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
-    title: 'Iridescent Identity Dashboard',
+    title: 'Interactive Hiring Microsite',
     description:
-      'A holographic profile and verification system with real‑time signals and delightful micro‑interactions for a fintech audience.',
+      'A playful, high‑conversion landing with 3D hero and motion‑led storytelling that boosted recruiter replies.',
     tags: ['React', 'Framer Motion', 'Spline'],
-    link: 'https://in.linkedin.com/in/timmareddy-deekshitha-701218318',
+    link: '#',
   },
   {
-    title: 'Holographic Portfolio Experience',
+    title: 'Real‑time Analytics Dashboard',
     description:
-      'An immersive personal site blending 3D visuals and accessible design to showcase skills, work, and social proof.',
-    tags: ['Vite', 'Tailwind CSS', '3D UI'],
-    link: 'https://in.linkedin.com/in/timmareddy-deekshitha-701218318',
+      'Crisp data visuals and silky interactions for faster decisions and clearer insights.',
+    tags: ['Vite', 'Tailwind CSS', 'APIs'],
+    link: '#',
   },
   {
-    title: 'Realtime Wallet Analytics',
+    title: 'Design System Toolkit',
     description:
-      'A modern dashboard for tracking transactions, risk, and behavior — optimized for clarity and speed.',
-    tags: ['TypeScript', 'APIs', 'Charts'],
-    link: 'https://in.linkedin.com/in/timmareddy-deekshitha-701218318',
+      'Composable UI library with tokens, accessibility, and delightful micro‑interactions.',
+    tags: ['Components', 'A11y', 'Theming'],
+    link: '#',
   },
 ]
 
@@ -38,10 +38,10 @@ export default function Projects() {
     <section id="projects" className="relative mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Featured Projects
+          Work that makes people want to reach out
         </h2>
         <p className="mt-3 text-gray-600">
-          A selection of modern, vibrant builds across identity, fintech, and rich user interfaces.
+          A few interaction‑rich builds focused on clarity, delight, and results.
         </p>
       </div>
 
@@ -72,7 +72,7 @@ export default function Projects() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800"
               >
-                Visit
+                View details
                 <ExternalLink className="h-4 w-4" />
               </a>
             </div>

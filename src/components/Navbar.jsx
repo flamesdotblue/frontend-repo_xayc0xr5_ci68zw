@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, X, Linkedin } from 'lucide-react'
+import { Menu, X, Linkedin, Mail } from 'lucide-react'
 
 const NAV_LINKS = [
   { href: '#home', label: 'Home' },
@@ -31,6 +31,13 @@ export default function Navbar() {
                 <span className="pointer-events-none absolute -bottom-1 left-0 h-px w-0 bg-gray-900 transition-all duration-300 group-hover/lnk:w-full" />
               </a>
             ))}
+            <a
+              href="mailto:hello@hire-me.dev?subject=Hiring%20Inquiry"
+              className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50"
+            >
+              <Mail className="h-4 w-4" />
+              Hire me
+            </a>
             <a
               href="https://in.linkedin.com/in/timmareddy-deekshitha-701218318"
               target="_blank"
@@ -65,15 +72,24 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="https://in.linkedin.com/in/timmareddy-deekshitha-701218318"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:brightness-110"
-            >
-              <Linkedin className="h-4 w-4" />
-              LinkedIn
-            </a>
+            <div className="flex gap-2 pt-2">
+              <a
+                href="mailto:hello@hire-me.dev?subject=Hiring%20Inquiry"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50"
+              >
+                <Mail className="h-4 w-4" />
+                Hire me
+              </a>
+              <a
+                href="https://in.linkedin.com/in/timmareddy-deekshitha-701218318"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:brightness-110"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       )}
