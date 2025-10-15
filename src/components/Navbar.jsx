@@ -4,6 +4,9 @@ import { Menu, X, Linkedin, Mail } from 'lucide-react'
 const NAV_LINKS = [
   { href: '#home', label: 'Home' },
   { href: '#projects', label: 'Projects' },
+  { href: '#resume', label: 'Resume' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -20,7 +23,7 @@ export default function Navbar() {
             <span className="pointer-events-none absolute -bottom-1 left-5 h-px w-0 bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-300 group-hover:w-20" />
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -28,7 +31,6 @@ export default function Navbar() {
                 className="relative text-sm font-medium text-gray-700 transition-colors hover:text-gray-900"
               >
                 {link.label}
-                <span className="pointer-events-none absolute -bottom-1 left-0 h-px w-0 bg-gray-900 transition-all duration-300 group-hover/lnk:w-full" />
               </a>
             ))}
             <a
